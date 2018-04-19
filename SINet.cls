@@ -10,7 +10,7 @@
 % --------------------------------------------
 \usepackage[utf8]{inputenc}
 \usepackage{xspace}
-\usepackage[english]{babel}
+\usepackage[spanish,mexico]{babel}
 \usepackage{url}
 \usepackage{latexsym}
 \usepackage{enumerate}
