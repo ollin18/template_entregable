@@ -16,6 +16,7 @@
 \usepackage{enumerate}
 \usepackage{rotating}
 \usepackage{framed}
+\usepackage{multicol}
 \usepackage{fancybox}
 %REMOVED \usepackage{fancyhdr}
 \usepackage[automark,headsepline]{scrlayer-scrpage}
@@ -24,7 +25,7 @@
 \usepackage{float}
 \usepackage{times}
 \usepackage{array}
-\usepackage{booktabs} 
+\usepackage{booktabs}
 \usepackage{amsmath,amsthm, amsfonts, amssymb, amsxtra,amsopn}
 \usepackage{setspace}
 \usepackage{multirow}
@@ -39,6 +40,7 @@
 \usepackage[a4paper,margin=2cm,heightrounded]{geometry}
 \graphicspath{{images/}}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\renewcommand{\UrlFont}{\small}
 
 %%--Set the section number depth.
 \setcounter{secnumdepth}{3}
