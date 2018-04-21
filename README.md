@@ -11,7 +11,7 @@ You should also edit the file **title.tex** for defining deliverable specific op
 
 1. the deliverable title (`\newcommand{\DelTitle}{Title of this deliverable}`)
 2. the deliverable number  (`\newcommand{\DelNumber}{DX.X}`)
-3. and, the deliverable version (`\newcommand{\DelVersion}{0.X/1.0}`)
+3. and, the contract number (`\newcommand{\Contrato}{0.X/1.0}`)
 
 The project logo in the footer can be changed by editing the following line:
 
