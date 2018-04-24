@@ -4,7 +4,7 @@
 %%---------------------------------------------------
 %\NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{SINet}
-\LoadClass[a4paper,twoside,final,10pt,headings=small]{scrreprt}
+\LoadClass[a4paper,twoside,final,12pt,headings=small]{scrreprt}
 % --------------------------------------------
 % Load packages
 % --------------------------------------------
@@ -40,7 +40,7 @@
 \usepackage[a4paper,margin=2cm,heightrounded]{geometry}
 \graphicspath{{images/}}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
-\renewcommand{\UrlFont}{\small}
+\renewcommand{\UrlFont}{\scriptsize}
 
 %%--Set the section number depth.
 \setcounter{secnumdepth}{3}
