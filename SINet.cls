@@ -40,7 +40,7 @@
 \usepackage[a4paper,margin=2cm,heightrounded]{geometry}
 \graphicspath{{images/}}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
-\renewcommand{\UrlFont}{\scriptsize}
+\renewcommand{\UrlFont}{\small}
 
 %%--Set the section number depth.
 \setcounter{secnumdepth}{3}
@@ -48,7 +48,7 @@
 \setcounter{page}{2}
 \setstretch{1.7}
 
-\bibliographystyle{IEEEtran}
+\bibliographystyle{plain}
 \sloppy
 %%--------------------------------------------
 %%-- Definition and Quotation commands.
