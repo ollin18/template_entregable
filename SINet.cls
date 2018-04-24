@@ -48,7 +48,7 @@
 \setcounter{page}{2}
 \setstretch{1.7}
 
-\bibliographystyle{IEEEtran}
+\bibliographystyle{plain}
 \sloppy
 %%--------------------------------------------
 %%-- Definition and Quotation commands.
