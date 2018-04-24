@@ -46,6 +46,7 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{4}
 \setcounter{page}{2}
+\setstretch{1.6}
 
 \bibliographystyle{IEEEtran}
 \sloppy
