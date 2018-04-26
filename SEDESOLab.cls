@@ -1,9 +1,9 @@
 %%---------------------------------------------------
 %% BASED ON: http://netcommons.eu/
-%% Edited by David Palma, SINet: https://sinet.item.ntnu.no
+%% Edited by David Palma, SEDESOLab: https://sinet.item.ntnu.no
 %%---------------------------------------------------
 %\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{SINet}
+\ProvidesClass{SEDESOLab}
 \LoadClass[a4paper,twoside,final,12pt,headings=small]{scrreprt}
 % --------------------------------------------
 % Load packages
@@ -35,7 +35,7 @@
 \usepackage{lastpage}
 \usetikzlibrary{calc}
 % Color Links
-\usepackage[pdftex,hyperfigures,hyperindex,bookmarksnumbered,colorlinks, bookmarks, breaklinks, linktocpage,citecolor=blue,urlcolor=blue,linkcolor=black,pdftitle={SINet},pdfauthor={SINet}]{hyperref}
+\usepackage[pdftex,hyperfigures,hyperindex,bookmarksnumbered,colorlinks, bookmarks, breaklinks, linktocpage,citecolor=blue,urlcolor=blue,linkcolor=black,pdftitle={SEDESOLab},pdfauthor={SEDESOLab}]{hyperref}
 \usepackage{graphicx}
 \usepackage[a4paper,margin=2cm,heightrounded]{geometry}
 \graphicspath{{images/}}
