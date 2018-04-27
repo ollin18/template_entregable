@@ -40,7 +40,7 @@
 \usepackage[a4paper,margin=2cm,heightrounded]{geometry}
 \graphicspath{{images/}}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
-\renewcommand{\UrlFont}{\small}
+\renewcommand{\UrlFont}{\scriptsize}
 
 %%--Set the section number depth.
 \setcounter{secnumdepth}{3}
