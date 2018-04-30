@@ -33,6 +33,7 @@
 \usepackage{tikz}
 \usepackage[center,bf]{caption}
 \usepackage{lastpage}
+\usepackage{longtable}
 \usetikzlibrary{calc}
 % Color Links
 \usepackage[pdftex,hyperfigures,hyperindex,bookmarksnumbered,colorlinks, bookmarks, breaklinks, linktocpage,citecolor=blue,urlcolor=blue,linkcolor=black,pdftitle={SEDESOLab},pdfauthor={SEDESOLab}]{hyperref}
