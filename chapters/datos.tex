@@ -409,18 +409,8 @@ Las bases históricas de CUIS tienen \textit{LLAVE\_HOGAR\_H} y \textit{C\_INTEG
     \hline
     TIPO\_PROY\_ESP &  Especificar otro proyecto \\
     \hline
-    EJERCICIO & Año de captura de la encuesta \\
-    \hline
-    CONSISTENCIA & Índice de consistencia de la información \\
-    \hline
-    VIGENCIA & Índice de la vigencia de la información \\
-    \hline
-    USABILIDAD & Índice de la usabilidad de la información \\
-    \hline
-    INT\_CARE & Índice de la intensidad de la carencia \\
-    \hline
 \end{longtable}
-\captionof{table}{Catálogo de variables socioeconómicas SIFODE 39.9}
+\caption{Catálogo de variables socioeconómicas SIFODE 39.9}
 \label{tab:varsocioe}
 
 \subsection{SIFODE Domicilio}
@@ -504,5 +494,97 @@ Otra sección importante dentro de la información recolectada por el SIFODE es 
     S\_CAMINO & Nombre compuesto del Camino, conforme a la Norma técnica sobre domicilios geográficos del INEGI \\
     \hline
 \end{longtable}
-\captionof{table}{Información domiciliaria de SIFODE 39.9}
+\caption{Información domiciliaria de SIFODE 39.9}
 \label{tab:domicilios}
+
+\pagebreak
+
+\begin{longtable}{|p{8cm}|p{8cm}|}
+    \hline
+    \hline
+    Campo  & Descripción\\
+    \hline
+    \multicolumn{2}{l}{Identificadores únicos}\\
+    \hline
+    LLAVE\_HOGAR\_H & Identifica encuestas únicas integradas por el o los folios que identifican a una encuesta de manera única declaradas por el programa\\
+    \hline
+    C\_INTEGRANTE & Número de renglón de integrante en la encuesta\\
+    \hline
+    ID\_UNICO\_39\_9 & Identificador Único de Personas en Padrones corresponiente a SIFODE 39.9\\
+    \hline
+    \hline
+    \multicolumn{2}{l}{Indicadores}\\
+    \hline
+    EJERCICIO & Año de captura de la encuesta \\
+    \hline
+    CONSISTENCIA & Índice de consistencia de la información \\
+    \hline
+    VIGENCIA & Índice de la vigencia de la información \\
+    \hline
+    USABILIDAD & Índice de la usabilidad de la información \\
+    \hline
+    INT\_CARE & Índice de la intensidad de la carencia \\
+    \hline
+\end{longtable}
+\caption{Información de los indicadores de SIFODE 39.9}
+\label{tab:indicadores}
+
+\pagebreak
+\subsection{Red Carretera}
+A partir del año 2014 el INEGI ha liberado archivos shape\footnote{Un shapefile es un formato sencillo y no topológico que se utiliza para almacenar la ubicación geométrica y la información de atributos de las entidades geográficas.} con la información de los caminos registrados dentro de la República Mexicana.
+
+\begin{longtable}{|p{8cm}|p{8cm}|}
+    \hline
+    \hline
+    Campo  & Descripción\\
+    \hline
+    \multicolumn{2}{l}{Red Carretera}\\
+    wkt &  Well Known Text, es una codificación o sintaxis en formato ASCII estandarizada diseñada para describir objetos espaciales expresados de forma vectorial\\
+    \hline
+    id\_red & Un número secuencial que se incrementa con cada ocurrencia del objeto\\
+    \hline
+    tipo\_vial & Clasificación que se le da al objeto espacial, en función de lo determinado por la autoridad local\\
+    \hline
+    nombre & Nombre de la vialidad\\
+    \hline
+    codigo & Si cuenta con algún código que represente dicho camino como una carretera\\
+    \hline
+    cond\_pav & Condiciones en las que se encuentra el pavimento de la vialidad\\
+    \hline
+    recubri & Tipo de recubrimiento si es que la tiene\\
+    \hline
+    carriles & Número de carriles\\
+    \hline
+    estatus & Si se encuentra habilitado o en construcción\\
+    \hline
+    condicion & Si se encuentra en operación o no\\
+    \hline
+    nivel & Si es puente, camino o túnel\\
+    \hline
+    peaje & Pago  correspondiente  a  los  derechos  de  tránsito  o  c
+irculación  por  determinados  lugares,  como algunas autopistas, puentes, túneles, aduanas, etc.\\
+    \hline
+    administra & Clasificación  que  se  le  da  al  objeto  espacial  en  fu
+nción  de  la  responsabilidad  de mantenimiento\\
+    \hline
+    jurisdi & Si es federal o no\\
+    \hline
+    circula & Los sentidos en los que se recorren los caminos\\
+    \hline
+    escala\_vis & Clasificación que se le da a la carretera o vialidad para fines de representación de acuerdo al rango de escalas definido para cada valor \\
+    \hline
+    velocidad & Velocidad máxima sobre la vialidad\\
+    \hline
+    union\_ini & Intersección inicial con otra vialidad\\
+    \hline
+    union\_fin & Intersección final con otra vialidad\\
+    \hline
+    longitud & Longitud en metros de la vialidad\\
+    \hline
+    ancho & Ancho en metros de la vialidad\\
+    \hline
+    calirepr & Calificador de posición \\
+    \hline
+\end{longtable}
+\caption{Variables dentro de los archivos shape de la Red Carretera}
+\label{tab:redcarretera}
