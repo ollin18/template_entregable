@@ -1,7 +1,20 @@
 \chapter{Infraestructura}
-Para la realización de la ingesta de estos datos se decidió utilizar la infraestructura en la nube de Amazon Web Services (AWS). Los servicios de AWS que se utilizan son:
+\section{Infraestructura física}
+Para la realización de la ingesta de estos datos se decidió utilizar la infraestructura en la bube de Amazon Web Services (AWS). Llamaremos infraestructura física a la que consta del equivalente al hardware en los servicios de nube. Los servicios de AWS que se utilizan son:
 \begin{itemize}
     \item \textbf{EC2}. Elasting Compute Cloud. Servidores con capacidad de cómputo multipropósito.
     \item \textbf{S3}. Simple Storage Service. Servicio de almacenamiento de datos.
     \item \textbf{RDS}. Relational Database service. Servicio de base de datos relacionales con PostgreSQL.
 \end{itemize}
+Con estas tecnologías podemos realizar una ingesta de datos tal que pase de sus formatos originales a una base de datos propia y así poder consumir fácilmente información de la misma por medio de queries.
+\subsection{EC2}
+Es la solución en la nube de AWS para servidores, es decir, poder de cómputo. El uso de este servicio es mediante una instancia alojada en los servidores de Amazon. Se utiliza un sistema operativo basado en Linux porque otorga la flexibilidad necesaria para llevar a cabo las tareas planteadas de manera semiautomatizada.
+\subsection{S3}
+La necesidad de almacenar datos de gran escala de forma eficiente y segura se puede cubrir usando el servicio de almacenamiento S3. El cual es altamente confiable y de sencilla integración con los demás servicios de AWS. El costo de s3 frente a un volumen de disco duro convencional es tan sólo una fracción del mismo por MB además de ofrecer mayor seguridad e integridad de los datos.
+\subsection{RDS}
+El servicio de base de datos relacionales puede estar en parte manejado por la estructura de AWS permitiendo usar la capacidad de cómputo de una EC2 con la configuración del software de preferencia de manera sencilla. La selección de una base de datos es muy importante tomando en cuenta el tipo de datos que se van a almacenar en ella además de la forma en la que se desea acceder a los mismo. De esta manera, al pensar la estructura de datos de forma columnar y teniendo en mente la necesidad de uso de archivos de geometrías como los shape de la red carretera además del costo de licencia se optó por el uso de la base llamada PostgreSQL. Las ventajas de usar la tecnnología de PostgreSQL además de su robustez se basan principalmente en la capacidad de guardar objetos de tipo geométrico, abriendo la posibilidad de hacer cálculos geoespaciados gracias al paquete PostGIS que es una extensión del mismo PostgreSQL para dichos elementos.
+
+\section{Infraestructura de software}
+La infraestructura está basada en un sistema tipo UNIX basado en Linux porque además de ser abierto, también es compatible con todas las tecnologías que se van a utilizar.\\
+\subsection{Shell}
+Una Shell de Unix es un intérprete de comandos, el cual es una interfaz textual de la computadora con el usuario que permite ejecutar comandos definidos por otros pedazos de software o programas, así mediante órdenes o instrucciones se puede comunicar con el kernel de la computadora y a su vez
