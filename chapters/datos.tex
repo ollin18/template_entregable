@@ -1,0 +1,121 @@
+\chapter{Fuentes de datos}
+El objetivo del proyecto ATN/OC 15822-RG en general es el realizar una mejor focalización de los recursos para aquellos hogares que en verdad se encuentren en estado de carencia para así poder hacer una mayor diferencia, un objetivo particular también es el de realizar una estimación de ingreso con las variables con las que se cuentan, las cuales se obtienen a partir de las fuentes que se mencionaron en el capítulo de introducción.\\
+\section{SIFODE}
+SIFODE cuenta con una recopilación de datos de CUIS tomando en cuenta ciertas variables que son de interés para distintos ámbitos del propio sistema, el total de personas que están registradas en el mismo asciende a 39.9 millones.
+\subsection{SIFODE Calificación}
+Se le da el nombre de calificación a un set de datos que se utiliza para definir universos potenciales de participantes del SIFODE a partir de unas variables socioeconómicas prestablecidas. Como se ha mencionado anteriormente, la unidad básica es el hogar, por lo que existe un identificador único para cada uno de ellos que es llamado \textit{LLAVE\_HOGAR\_H}, dicho identificador consta de 50 caracteres que identifican encuestas únicas y está integrado por el o los folios que identifican a una encuesta de manera única declarados por programa, a partir de este se genera otro identificador para cada una de las personas que componen el hogar, llamado \textit{C\_INTEGRANTE}, el cual consta de números consecutivos del 1 al número total de integrantes del hogar. Por último, existe una variable llamada \textit{NEW\_ID} el cual es un identificador único de personas en padrones correspondiente a SIFODE, este se construye a partir del nombre, apellido paterno, apellido materno, fecha de nacimiento, entidad de nacimiento, sexo y CURP.\\
+Las bases históricas de CUIS tienen \textit{LLAVE\_HOGAR\_H} y \textit{C\_INTEGRANTE} y las bases de SIFODE tienen \textit{LLAVE\_HOGAR\_H}, \textit{C\_INTEGRANTE} e \textit{ID\_UNICO\_39\_9}, que es el mismo que el \textit{NEW\_ID} por lo que es de esta manera en que se pueden relacionar CUIS, SIFODE y PUB.
+
+\begin{longtable}{|p{8cm}|p{8cm}|}
+    \hline
+    \hline
+    Campo  & Descripción\\
+    \hline
+    \multicolumn{2}{l}{Identificadores únicos}\\
+    \hline
+    LLAVE\_HOGAR\_H & Identifica encuestas únicas integradas por el o los folios que identifican a una encuesta de manera única declaradas por el programa\\
+    \hline
+    C\_INTEGRANTE & Número de renglón de integrante en la encuesta\\
+    \hline
+    ID\_UNICO\_39\_9 & Identificador Único de Personas en Padrones corresponiente a SIFODE 39.9\\
+    \hline
+    \hline
+    \multicolumn{2}{l}{Ubicación de personas y hogares}\\
+    \hline
+    S\_CVE\_ENTIDAD\_FEDERATIVA & Clave de entidad \\
+    \hline
+    S\_NOM\_ENTIDAD\_FEDERATIVA & Entidad federativa \\
+    \hline
+    S\_CVE\_MUNICIPIO & Clave de municipio\\
+    \hline
+    S\_NOM\_MUNICIPIO & Municipio o delegación\\
+    \hline
+    S\_CVE\_LOCALIDAD & Clave de localidad\\
+    \hline
+    S\_NOM\_LOCALIDAD & Localidad \\
+    \hline
+    S\_TIPOLOC & Tipo de localidad \\
+    \hline
+    S\_LONGITUD & Longitud \\
+    \hline
+    S\_LATITUD & Latitud \\
+    \hline
+    S\_CVE\_AGEB & Clave de la cartografía censal al cierre del censo de población y vivienda 2010 \\
+    \hline
+    S\_CVE\_MANZANA & Clave Manzana \\
+    \hline
+    S\_C\_TIPO\_VIAL & Tipo de vialidad \\
+    \hline
+    S\_NOMBRE\_VIAL & Nombre de vialidad \\
+    \hline
+    S\_CP & Código postal \\
+    \hline
+    S\_C\_TIPO\_ASENTAMIENTO & Tipo de asentamiento humano \\
+    \hline
+    S\_NOMBRE\_ENTRE\_VIAL\_1 & Nombre de vialidad entre la calle 1 \\
+    \hline
+    S\_C\_TIPO\_ENTRE\_VIAL\_1 & Tipo de vialidad 1 \\
+    \hline
+    S\_C\_TIPO\_VIAL\_POS & Nombre de vialidad entre la calle 2 \\
+    \hline
+    S\_NOMBRE\_ENTRE\_VIAL\_2 & Nombre de vialidad entre la calle 2 \\
+    \hline
+    S\_C\_TIPO\_ENTRE\_VIAL\_2 & Codificación tipo de vialidad \\
+    \hline
+    S\_NOMBRE\_VIAL\_POS & Nombre de la vialidad la calle de atrás \\
+    \hline
+    S\_DESC\_UBIC & Descripción de la ubicación \\
+    \hline
+    S\_NUM\_EXT & Número exterior \\
+    \hline
+    S\_LETRA\_EXT & Letra exterior \\
+    \hline
+    NUMEXTNUM2 & Número exterior anterior \\
+    \hline
+    S\_NUM\_INT & Número interior \\
+    \hline
+    S\_LETRA\_INT & Letra interior \\
+    \hline
+    S\_ORIGEN\_DOMICILIO & Origen del domicilio \\
+    \hline
+    S\_CARRETERA & Nombre compuesto de la carretera, conforme a la norma técinca sobre domicilios geográficos del INEGI \\
+    \hline
+    S\_CAMINO & Nombre compuesto del Camino, conforme a la Norma técnica sobre domicilios geográficos del INEGI \\
+    \hline
+    \hline
+    \multicolumn{2}{l}{Indentificación de personas}\\
+    \hline
+    NUME\_PER & Informante adecuado \\
+    \hline
+    TIE_CURP & La persona tiene CURP \\
+    \hline
+    NB_CURP & CURP \\
+    \hline
+    NB_NOMBRE &  Nombre \\
+    \hline
+    NB_PRIMER_AP & Primer apellido \\
+    \hline
+    NB_SEGUNDO_AP & Segundo apellido \\
+    \hline
+    FCH_NACIMIENTO & Fecha de nacimiento \\
+    \hline
+    C_CD_EDO_NAC & Entidad de nacimiento \\
+    \hline
+    C_CD_SEXO & Sexo \\
+    \hline
+    EDAD & Años cumplidos al momento de la encuesta \\
+    \hline
+    EDAD_ACTUAL & Edad actual calculada a 2017 \\
+    \hline
+    VAL_NB_RENAPO & Validación del CURPO con RENAPO \\
+    \hline
+    ANIO_NAC & Año de nacimiento \\
+    \hline
+    \hline
+    \multicolumn{2}{l}{Clasificación de pobreza y carencias}\\
+
+
+
+\end{longtable}
+\captionof{table}{Catálogo de variables socioeconómicas SIFODE 39.9}
+\label{tab:varsocioe}
