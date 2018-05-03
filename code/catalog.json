@@ -1,0 +1,594 @@
+{
+    "title": "Catálogo de datos publicados por el Laboratorio de Datos de SEDESOL",
+    "description": "Datos relacionados con el desarrollo social o que son usados por el equipo de Ciencia de Datos para análisis. El mantenimiento corre a cargo del mismo equipo.",
+    "homepage": "http://www.plataformapreventiva.gob.mx",
+    "issued": "2018-02-23T00:00:00Z",
+    "modified": "2018-02-23T09:38:45Z",
+    "language": "es",
+    "license": "https://opensource.org/licenses/MIT",
+    "dataset": [
+        {
+            "title": "CUAPS Programas",
+            "description": "Datos del Cuestionario Único de Aplicación a Programas, a nivel programa. Contiene información administrativa y de diseño del programa",
+            "identifier": "cuaps_programas",
+            "issued": "2017-11-30",
+            "modified": "2018-01-31",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "carlos.valdes@sedesol.gob.mx"
+            },
+            "distribution": [
+                {
+                    "accessURL": "",
+                    "byteSize": "",
+                    "description": "El buscador de perfiles permitirá hacer búsquedas específicas por orden de gobierno, derecho social y tipo de apoyo, usando los datos de CUAPS. Los resultados de búsqueda estarán disponible para descarga en formato csv.",
+                    "downloadURL": "",
+                    "format": "csv",
+                    "issued": "",
+                    "license": "",
+                    "modified": "",
+                    "title": ""
+                }
+            ],
+            "keyword": [
+                "programas",
+                "desarrollo-sostenible",
+                "cuestionarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUAPS-PROGRAMAS/BDCUAPS_PROGRAMA_3.xlsx"
+        },
+        {
+            "title": "CUAPS Componentes",
+            "description": "Datos del Cuestionario Único de Aplicación a Programas, a nivel apoyo. Contiene información de diseño y operación de los apoyos que integran cada programa.",
+            "identifier": "cuaps_componentes",
+            "issued": "2017-11-30",
+            "modified": "2018-01-31",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "carlos.valdes@sedesol.gob.mx"
+            },
+            "distribution": [
+                {
+                    "accessURL": "",
+                    "byteSize": "",
+                    "description": "El buscador de perfiles permitirá hacer búsquedas específicas por orden de gobierno, derecho social y tipo de apoyo, usando los datos de CUAPS. Los resultados de búsqueda estarán disponible para descarga en formato csv.",
+                    "downloadURL": "",
+                    "format": "csv",
+                    "issued": "",
+                    "license": "",
+                    "modified": "",
+                    "title": ""
+                }
+            ],
+            "keyword": [
+                "programas",
+                "apoyos",
+                "desarrollo-sostenible",
+                "cuestionarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUAPS-PROGRAMAS/BDCUAPS_APOCOMP_3.xlsx"
+        },
+        {
+            "title": "CUAPS Criterios",
+            "description": "Datos del Cuestionario Único de Aplicación a Programas, a nivel criterio de focalización. Contiene información de los criterios de focalización que se usan para otorgar apoyos.",
+            "identifier": "cuaps_criterios",
+            "issued": "2017-11-30",
+            "modified": "2018-01-31",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "carlos.valdes@sedesol.gob.mx"
+            },
+            "distribution": [
+                {
+                    "accessURL": "",
+                    "byteSize": "",
+                    "description": "El buscador de perfiles permitirá hacer búsquedas específicas por orden de gobierno, derecho social y tipo de apoyo, usando los datos de CUAPS. Los resultados de búsqueda estarán disponible para descarga en formato csv.",
+                    "downloadURL": "",
+                    "format": "csv",
+                    "issued": "",
+                    "license": "",
+                    "modified": "",
+                    "title": ""
+                }
+            ],
+            "keyword": [
+                "programas",
+                "apoyos",
+                "desarrollo-sostenible",
+                "focalización",
+                "criterios",
+                "cuestionarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUAPS-PROGRAMAS/BDCUAPS_FOCALIZACION_3.xlsx"
+        },
+        {
+            "title": "CUIS 39.9",
+            "description": "Datos del Cuestionario Único de Información Socioeconómica. Contiene información socioeconómica obtenida en levantamientos operados por los programas, y utilizada para generar universos potenciales de beneficiarios de programas. El cuestionario es aplicado a nivel hogar.",
+            "identifier": "cuis_39_9",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": ""
+            },
+            "keyword": [
+                "programas",
+                "apoyos",
+                "desarrollo-sostenible",
+                "focalización",
+                "criterios",
+                "cuestionarios",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/CUIS_39_9.rar"
+        },
+        {
+            "title": "SIFODE: domicilios 39.9",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información socioeconómica de los hogares en los que fue aplicado el CUIS. El cuestionario es aplicado a nivel hogar.",
+            "identifier": "sifode_domicilio",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/DOMICILIO_39_9.rar"
+        },
+        {
+            "title": "SIFODE: calificación 39.9",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información socioeconómica de los hogares en los que fue aplicado el CUIS. El cuestionario es aplicado a nivel hogar.",
+            "identifier": "sifode_calificacion",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/CALIFICACION_39_9.rar"
+        },
+        {
+            "title": "SIFODE: universos 39.9",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información de universos potenciales, generados a partir de la información socioeconómica del CUIS, a nivel persona.",
+            "identifier": "sifode_universos",
+            "issued": "2017-12-29",
+            "modified": "2018-02-14",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios",
+                "universos",
+                "potenciales"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/Base_universos_39_9.rar"
+        },
+        {
+            "title": "SIFODE: indicadores 39.9",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información del CUIS.",
+            "identifier": "sifode_indicadores",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/Indicadores_SIFODE_39_9_v1.zip"
+        },
+        {
+            "title": "SIFODE: 2013",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información de apoyos a los que son beneficiarias las personas para quienes tenemos información socioeconómica en 2013.",
+            "identifier": "sifode_2013",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/in_2013_39_9.tar.gz"
+        },
+        {
+            "title": "SIFODE: 2014",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información de apoyos a los que son beneficiarias las personas para quienes tenemos información socioeconómica en 2014.",
+            "identifier": "sifode_2014",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/in_2014_39_9.tar.gz"
+        },
+        {
+            "title": "SIFODE: 2015",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información de apoyos a los que son beneficiarias las personas para quienes tenemos información socioeconómica en 2015.",
+            "identifier": "sifode_2015",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/in_2015_39_9.tar.gz"
+        },
+        {
+            "title": "SIFODE: 2016",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información de apoyos a los que son beneficiarias las personas para quienes tenemos información socioeconómica en 2016.",
+            "identifier": "sifode_2016",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/in_2016_39_9.tar.gz"
+        },
+        {
+            "title": "SIFODE: 2017",
+            "description": "Datos del Sistema de Focalización de Desarrollo. Contiene información de apoyos a los que son beneficiarias las personas para quienes tenemos información socioeconómica en 2017.",
+            "identifier": "sifode_2017",
+            "issued": "2017-12-29",
+            "modified": "2017-12-29",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sifode-raw/in_2017_39_9.tar.gz"
+        },
+        {
+            "title": "CUIS Histórico: domicilios",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene datos de la localización de los hogares donde se aplicó el cuestionario.",
+            "identifier": "cuis_historico_domicilios",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios",
+                "historico",
+                "cuestionarios",
+                "socioeconómica"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/domicilio.zip"
+        },
+        {
+            "title": "CUIS Histórico: encuesta",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene información sobre la aplicación del cuestionario.",
+            "identifier": "cuis_historico_encuesta",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios",
+                "historico",
+                "cuestionarios",
+                "socioeconómica"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/encuesta.zip"
+        },
+        {
+            "title": "CUIS Histórico: IDs",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene los IDs ",
+            "identifier": "cuis_historico_ids",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios",
+                "historico",
+                "cuestionarios",
+                "socioeconómica"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/ids_66.zip"
+        },
+        {
+            "title": "CUIS Histórico: integrante",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene información para identificar a la personas que integran el hogar.",
+            "identifier": "cuis_historico_integrante",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios",
+                "historico",
+                "cuestionarios",
+                "socioeconómica"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/integrante.zip"
+        },
+        {
+            "title": "CUIS Histórico: persona",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene información para identificar a las personas que respondieron el cuestionario.",
+            "identifier": "cuis_historico_persona",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "beneficiarios",
+                "historico",
+                "cuestionarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/persona.zip"
+        },
+        {
+            "title": "CUIS Histórico: información socioeconómica del integrante",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene información socioeconómica de los integrantes del hogar.",
+            "identifier": "cuis_historico_se_integrante",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios",
+                "historico",
+                "cuestionarios",
+                "socioeconómica"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/se_integrante.zip"
+        },
+        {
+            "title": "CUIS Histórico: información socioeconómica de la vivienda",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene información socioeconómica de la vivienda.",
+            "identifier": "cuis_historico_se_vivienda",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "historico",
+                "cuestionarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/se_vivienda.zip"
+        },
+        {
+            "title": "CUIS Histórico: información de la visita del encuestador",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene información de la visita realizada por el encuestador a la vivienda.",
+            "identifier": "cuis_historico_visita_encuestador",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "historico",
+                "cuestionarios"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/visita_encuestador.zip"
+        },
+        {
+            "title": "CUIS Histórico: información de la vivienda",
+            "description": "Datos históricos del Cuestionario Único de Información Socioeconómica. Contiene información de las características de la vivienda encuestada.",
+            "identifier": "cuis_historico_vivienda",
+            "issued": "2018-02-12",
+            "modified": "2018-02-12",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": "asdia.cordova@sedesol.gob.mx"
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "focalización",
+                "beneficiarios",
+                "historico",
+                "cuestionarios",
+                "socioeconómica"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": "sedesol-lab/CUIS-HISTORICO/vivienda.zip"
+        },
+        {
+            "title": "PUB Agrupaciones",
+            "description": "Datos del Padrón Universal de Beneficiarios. Contiene los datos del padrón de beneficiarios del año 2013 al año 2017.",
+            "identifier": "pub_agrupaciones",
+            "issued": "2017-12-13",
+            "modified": "2017-12-13",
+            "landingPage": "",
+            "publisher": {
+                "name": "Dirección General de Geoestadística y Padrones de Beneficiarios",
+                "mbox": ""
+            },
+            "keyword": [
+                "desarrollo-sostenible",
+                "beneficiarios",
+                "historico",
+                "padrones"
+            ],
+            "language": [
+                "es"
+            ],
+            "s3Location": [
+                "pub-raw/raw/vu_atv_2013_tablero.rar",
+                "pub-raw/raw/vu_atv_2014_tablero.rar",
+                "pub-raw/raw/vu_atv_2015_tablero.rar",
+                "pub-raw/raw/vu_atv_2016_tablero.rar",
+                "pub-raw/raw/vu_atv_2017_tablero.rar"
+            ],
+            "distribution": [
+                {
+                    "accessURL": "",
+                    "byteSize": "",
+                    "description": "Servicio mediante el cual se comparten agregaciones del padrón en el perfil de los estados, municipios y programas.",
+                    "downloadURL": "",
+                    "format": "csv",
+                    "issued": "",
+                    "license": "",
+                    "modified": "",
+                    "title": ""
+                },
+                {
+                    "accessURL": "",
+                    "byteSize": "",
+                    "description": "Servicio de consulta del padrón a nivel nominal.",
+                    "downloadURL": "",
+                    "format": "csv",
+                    "issued": "",
+                    "license": "",
+                    "modified": "",
+                    "title": ""
+                }
+            ]
+        }
+    ]
+}
