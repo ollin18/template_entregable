@@ -16,7 +16,7 @@ El servicio de base de datos relacionales puede estar en parte manejado por la e
 
 \section{Infraestructura de software}
 La infraestructura está basada en un sistema tipo UNIX basado en Linux porque además de ser abierto, también es compatible con todas las tecnologías que se van a utilizar.\\
-\subsection{Shell}
+\subsection{Scripts}
 Una Shell de Unix es un intérprete de comandos, el cual es una interfaz textual de la computadora con el usuario que permite ejecutar comandos definidos por otros pedazos de software o programas, así mediante órdenes o instrucciones se puede comunicar con el kernel de la computadora. Para el manejo de datos por medio de Shell se utilizarán los siguientes programas:
 \begin{itemize}
     \item \textbf{AWK}. Es particularmente útil para el manejo de datos en listas indexadas y expresiones regulares.
@@ -27,4 +27,57 @@ Una Shell de Unix es un intérprete de comandos, el cual es una interfaz textual
     \item \textbf{OGR2OGR}. Conversión entre distintos tipos de archivos, entre ellos de shape a CSV.
     \item \textbf{CSVKIT}. Funcionalidades para trabajar con archivos CSV.
 \end{itemize}
+A su vez también se utilizan programas escritos en el lenguaje Python utilizando las siguientes librerías
+\begin{itemize}
+    \item \textbf{PANDAS}. Añaden la capacidad de manejo de datos en forma de data frames con funcionalidades implementadas.
+    \item \textbf{CSV}. Paquete para trabajar con archivos CSV.
+    \item \textbf{SMART\_OPEN}. Permite hacer streaming a archivos en S3.
+    \item \textbf{BOTO}. Maneja la conexión con AWS.
+\end{itemize}
 Debido a que las fuentes de datos además de la naturaleza de los mismos es diferente, es común encontrarse con extensiones de datos distintas, esto es porque las mismas representan el tipo de  datos que contienen dichos archivos y eso ayuda a identificar la forma de utilizarlos.
+\subsubsection{Pipeline}
+La forma de manejar la automatización de los datos se trabaja mediante el software llamado \textit{Luigi} que es un orquestador manejado por dependencias y trabajando por batches. Las secciones del pipeline son:
+\begin{itemize}
+    \item Source script. Descarga o hace stream del archivo fuente además de ordenarlo en un CSV separado por el caracter ``|''. Guarda temporalmente el archivo en local. Esta ingesta puede tener una temporalidad definida desde días hasta años.
+    \item Diccionario. Se genera un diccionario de las variables del archivo el cual debe ser llenado a mano, una vez completado se guarda en S3.
+    \item Base de datos. Se guardan tanto los archivos como sus diccionarios en la base de datos PostgreSQL.
+    \item Linaje. Se genera un linaje de datos en una base de datos Neo4j que es orientada a grafos, así se generan relaciones con las tablas y sus columnas así como con su temporalidad.
+\end{itemize}
+\subsection{Metadatos}
+Los metadatos sirven para entender los datos, lo cual es tan importante como los datos mismos por lo que es importante contar con diccionarios y catálogos que den información sobre la naturaleza de ellos.
+\subsubsection{Diccionarios}
+Los diccionarios tienen la siguiente estructura
+
+\begin{longtable}{|p{8cm}|p{8cm}|}
+    \hline
+    \hline
+    Campo  & Descripción\\
+    \hline
+    \multicolumn{2}{l}{Identificadores únicos}\\
+    \hline
+    ID & Nombre de la columna \\
+    \hline
+    Nombre & Lo que representa el ID \\
+    \hline
+    Fuente & Fuente original de los datos \\
+    \hline
+    URL & Dirección url de la fuente si es que existe \\
+    \hline
+    Tipo & Tipo de la fuente de datos \\
+    \hline
+    Subtipo & Mayor granularidad del tipo de la fuente \\
+    \hline
+    Periodo & Periodo de descarga \\
+    \hline
+    Actualización\_sedesol & La fecha en que se hizo una actualización de la base de datos\\
+    \hline
+    Metadata & Explicación de la variable \\
+    \hline
+    data\_date & Fecha intrínseca al source script de descarga \\
+    \hline
+\end{longtable}
+\caption{Diccionario de datos}
+\label{tab:diccionario}
+
+\subsubsection{Catálogo}
+Un catálogo de datos o DCAT es un documento con la información necesaria para entender el origen y la naturaleza de los datos en cuestión. Consta de un formato predefinido de manera homologada.
