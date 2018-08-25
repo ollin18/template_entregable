@@ -1,95 +1,39 @@
 \chapter{Introducción}
-\section{Fuentes de Información}
-La Secretaría de Desarrollo Social (SEDESOL) es la entidad mexicana encargada de dar ayuda y alivio a las personas que se encuentran en estado de marginación y/o carencia. Cuenta anualmente con un estimado de 19 programas sociales a nivel federal de los que se desprenden aproximadamente 330 subprogramas dando apoyo a más de 80 millones de mexicanos, lo que representa una covertura superior al 60\% del total de la población mexicana.\\
-El mecanismo principal de integración a los programas sociales tiene como parte fundamental la aplicación del Cuestionario Único de Información Socioeconómica (CUIS)\cite{cuis} el cuál es la base mínima de información de los universos de beneficiarios de cada programa. Algunos programas incorporan más preguntas a dicho cuestionario para obtener una mayor información referente a las condiciones específicas que pretenden mejorar. El CUIS es aplicado por hogar, el cual se define como el conjunto de personas que comparten techo, manutención y comida; es decir, en un inmueble pueden convivir diversos hogares si estos no comparten gastos y/o no comen de la misma preparación de alimentos.\\
-Debido a que la información asentada en dicho cuestionario es la utilizada para que un programa decida otorgar un beneficio a un hogar, el aliciente para contestarlo de manera falaz es muy elevado pues el encuestado puede declarar ingresos menores o vulnerabilidades falsas con la intención de ser considerado dentro de la definición de población objetivo de cierto programa. Es importante considerar que la mayor parte de los programas no realizan una verificación domiciliar para corroborar las respuestas, pues dicho cuestionario es llenado por medio de una aplicación digital o en un módulo de SEDESOL.\\
-De esta manera, es importante contar con un modelo estadístico que nos permita definir qué tan verosímil es que un hogar en partícular se encuentre dentro de las definiciones de vulnerabilidades o carencias. Por lo que este proyecto pretende presentar una metodología para realizar una estimación del ingreso por medio de información que se considere con alta probabilidad de ser verídica como lo es la versión del CUIS del programa PROSPERA\cite{prospera} que realiza verificaciones a toda su población beneficiada.\\
-El Sistema de Focalización de Desarrollo (SIFODE) es el encargado de consolidar la información socioeconómica de los hogares a través de los cuestionarios antes descritos, siendo posible que estos hayan sido beneficiarios anteriores de algún programa o no. A partir de los resultados de los cuestionarios el mismo SIFODE es quien está encargado de evaluar los mismos por medio del modelo multidimensional de pobreza dado por el Consejo Nacional de Evaluación de la Política de Desarrollo Social (CONEVAL)\cite{multidimensional}.\\
+\section{Lenguaje de programación \textit{R}}
+\textit{R} es un lenguje de programación nacido como la versión libre de \textit{S} creado en los Laboratorios Bell a finales de la década de los 70 para satisfacer la necesidad de realizar cómputo estadístico de una manera más interactiva que Fortran.\cite{S}\\
+\textit{R} al igual que todas sus librerías implementan una gran variedad de técnicas estadísticas que incluyen pero no están limitadas a modelos lineales y no lineales, análisis de series de tiempo y clasificación. Es por esto que en la actualidad es una de las herramientas más utilizadas en la ciencia de datos.
 
-\section{Carencias Sociales}
-SEDESOL considera que la pobreza es causada en base a 6 tipos de carencias sociales, clasificadas de la siguiente manera:\\
+\section{Base de Datos}
+Las fuentes de datos de las que se habló en el entregable anterior fueron ordenadas en dos tipos de bases de datos:\\
 \begin{itemize}
-    \item Seguridad Social
-    \item Salud
-    \item Educación
-    \item Alimentación
-    \item Vivienda
-    \item Ingreso
+    \item Postgres\cite{PostgreSQL}
+    \item Athena\cite{Athena}
 \end{itemize}
-Dichas carencias están definidas por CONEVAL\cite{coneval} que a partir de la Ley General de Desarrollo Social (LGDS) aprovada en 2004 donde se establece la promoción de condiciones que aseguren el disfrute de los derechos sociales, así como el impulso de un desarrollo económico con sentido social que eleve el ingreso de la población y contribuya a reducir la desigualdad\ref{carencias}. Para poder garantizar lo anterior se creó el mencionado CONEVAL como un instrumento de evaluación y seguimiento de las políticas de desarrollo social. El mismo aunque es un organismo público, a la vez cuenta con autonomía técnica y de gestión. Entre sus deberes de ejercicio se encuentra establecer los lineamientos y criterios para la definición, identificación y medición de la pobreza.\\
-La LGDS establece que la medición de la pobreza efectuada por CONEVAL debe ser efectuada cada 2 años a nivel estatal y cada 5 a nivel municipal, utilizando la información generada por el Instituto Nacional de Estadística y Geografía (INEGI)\cite{inegi} considerando al menos los siguientes indicadores:
+Ambas pertencecen a un tipo de bases consideradas relacionales, que tienen una naturaleza columnar y la manera de interactuar con ellas es por medio del lenguaje SQL\cite{SQL} (Structured Query Language) el cual está ampliamente extendido para este tipo de consultas aunque cada uno tiene soportes para diferentes tipos de objetos y se rige por su propio dialecto, es decir no usan un tipo de SQL estándar sino que existen difieren en funciones y tipo de llamados.\\
+La infraestructura de la base de datos Postgres está montada sobre el servicio de Amazon AWS llamado RDS, que consta de software de bases de datos que se encuentran en instancias EC2 optimizadas para el uso de este tipo de necesidades, además de estar completamente manejados por lo que no es necesario configuar los detalles técnicos.\\
+Por otro lado, Athena es otro servicio de AWS que permite hacer consultas sobre archivos estructurados alojados en S3 (de lo que se habló en el primer entregable) el cual monta un cluster efímero de instancias y ejecuta la consulta de forma paralela gracias a la tecnología HIVE de Apache\cite{Apache}.
+
+\subsection{Apache Hadoop}
+Hadoop\cite{hadoop} es una forma de acceder a ciertos sistemas de archivos soportados los cuales  pueden ser leídos y procesados de forma distribuida, lo que brinda la oportunidad de analizar grandes cantidades de datos. Un clúster típico Hadoop incluye un nodo maestro y múltiples trabajadores. El maestro realiza un rastreador de trabajo llamado jobtracker, uno de tareas llamado tasktracker, un nodo de nombres (namenode) y uno de datos (datanode). Los trabajadores sólo tienen nodo de datos y rastreador de tareas. Al correr sobre Java, se necesita tener instalado JRE y SSH para tener comunicación entre los nodos.
+
+\subsection{Apache Hive}
+Hive es una infraestructura indexada de agrupación, consulta y análisis de datos que está construida sobre Hadoop. Otras características de Hive son:
 \begin{itemize}
-    \item Ingreso corriente per cápita
-    \item Rezago educativo promedio en el hogar
-    \item Acceso a los servicios de salud
-    \item Acceso a la seguridad social
-    \item Calidad y espacios de la vivienda
-    \item Acceso a los servicios básicos en la vivienda
-    \item Acceso a la alimentación
-    \item Grado de cohesión social
-\end{itemize}
-La necesidad de usar los ocho indicadores implica la generación de una medición multidimensional de la pobreza. Históricamente se ha utilizado una definción unidimensional en la que sólo se considera el ingreso de una persona y su capacidad para adquirir una serie de productos indispensables, definiendo así un umbral para el cuál un hogar se considere pobre. En una formulación multidimensional el número y el tipo de dimensiones a considerar están directamente asociados a la forma en que se conciben las condiciones de vida mínimas o aceptables para garantizar un nivel de vida digno para todos y cada uno de los miembros de una sociedad.\\
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.45]{carencias.jpg}
-\caption{Esquema de carencias}
-\label{fig:carencias}
-\end{figure}
-Definidas estas carencias se establece que \textit{una persona se encuentra en situación de pobreza multidimensional cuando no tiene garantizado el ejercicio de al menos uno de sus derechos para el desarrollo social, y si sus ingresos son insuficientes para adquirir los bienes y servicios que requiere para satisfacer sus necesidades}.
-
-Según la ONU, la pobreza es una experiencia específica, local y circunstancial\cite{carencias}, lo que implica que una medida de pobreza no debe ser del todo universal sino tomar en cuenta situaciones particulares de los hogares o individuos tales como si se encuentran en un ambiente urbano o rural.\\
-
-\textit{Definición}:\textbf{ HOGAR} - Conjunto de personas que hacen vida en común dentro de una misma vivienda, unidos o no por parentesco, que comparten los gastos de manutención y preparan los alimentos en la misma cocina.\\
-
-Existen definiciones alternas,
-
-\textit{Definición 2}: \textbf{HOGAR} - Hogar es la persona o grupo de personas que habitan en la misma vivienda, se rigen bajo una única administración doméstica, hacen compras conjuntas de los productos de consumo básico (despensa), cocinan en el mismo lugar y “comen todos de la misma olla”.
-
-\subsection{Programas}
-\begin{longtable}{|p{4cm}|p{6cm}|p{6cm}|}
-    \hline
-    \textbf{Programa} & \textbf{Objetivo} & \textbf{Población Objetivo}\\
-    \hline
-    \hline
-    \textbf{Pensión para adultos mayores} & Contribuir   a   dotar   de   esquemas   de seguridad     social     que     protejan el bienestar socioeconómico de la población   en situación  de   carencia   o pobreza,  mediante  el  aseguramiento  de un ingreso mínimo, así como la entrega de    apoyos    de    protección    social    a personas de 65 años de edad en adelante que no reciban una pensión o jubilación de  tipo  contributivo  superior  a  la  línea de bienestar mínimo. & Personas   de   65   años   de   edad   en adelante,  mexicanas  y  mexicanos  por nacimiento  o  con  un  mínimo  de  25 años  de  residencia  en  el  país,  que  no reciban pensión mayor a \$1092 pesos mensuales por concepto de jubilación o pensión de tipo contributivo. \\
-    \hline
-    \textbf{Atención a jornaleros agrícolas} & Contribuir  a fortalecer  el  cumplimiento efectivo  de  los  derechos  sociales  que potencien     las     capacidades     de     las personas    en    situación    de    pobreza, incidiendo positivamente en la alimentación,  la  salud  y  la  educación mediante la reducción de las condiciones de precariedad que enfrenta  la población  jornalera  agrícola y los integrantes de sus hogares. & Población jornalera agrícola integrada por  mujeres  y  hombres  de  16  años  o más  que  laboran  como  jornaleras  y jornaleros   agrícolas,   así   como   los integrantes  de  su  hogar  en  situación de pobreza que tienen su residencia o lugar  de  trabajo  en  las  regiones  de atención  jornalera,  ya  sea  de  forma permanente o temporal. \\
-    \hline
-    \textbf{Estancias infantiles para apoyar a madres trabajadoras} & Contribuir   a   dotar   de   esquemas   de seguridad     social     que     protejan el bienestar socioeconómico de la población   en  situación  de   carencia   o pobreza  mediante  el  mejoramiento  de las condiciones de acceso y permanencia en  el  mercado  laboral  de  las  madres, padres   solos   y   tutores   que   buscan empleo, trabajan o estudian y acceden a los   servicios   de   cuidado   y   atención infantil. & \textbf{Modalidad    de    Apoyo    a    Madres Trabajadoras y Padres Solos}  En esta  modalidad    la    población objetivo  son  las  madres,  padres  solos y tutores que trabajan, buscan empleo o  estudian,  cuyo  ingreso  per  cápita estimado por hogar no rebasa la LB y declaran    que   no   tienen    acceso   a servicios    de    cuidadoy    atención infantil    a    través    de    instituciones públicas  de  seguridad  social  u  otros medios,  y  que  tienen  bajo  su  cuidado al menos a una niña o niño de entre 1 y  hasta  3  años  11  meses  de  edad  (un día  antes  de  cumplir  los  4  años),  o entre  1  y  hasta  5  años  11meses  de edad  (un  día  antes  de  cumplir  los  6 años),  en  casos  de  niñas  o  niños  con alguna discapacidad. \\ & & \textbf{Modalidad de Impulso a los Servicios de Cuidado y Atención Infantil} En    esta    modalidad    la    población objetivo   son   las   personas   físicas   o personas morales, que deseen establecer    y    operar    una    Estancia Infantil, o que cuenten con espacios en los que se brinde o pretenda brindar el servicio de cuidado y atención infantil para la población objetivo del Programa en la modalidad de Apoyo a Madres  Trabajadoras  y Padres  Solos, conforme  a  los  criterios  y  requisitos establecidos  en  las  presentes  Reglas de  Operación  y  sus  Anexos.\\
-    \hline
-    \textbf{3X1 para migrantes} & Contribuir  a  fortalecer  la  participación social    para    impulsar    el    desarrollo comunitario  mediante  la  inversión  en Proyectos    de    Infraestructura    Social, Servicios  Comunitarios,  Educativos  y/o Proyectos    Productivos    cofinanciados por   los   tres   órdenes   de   gobierno   y organizaciones de mexicanas y mexicanos en el extranjero. & La  población  objetivo  la  constituyen las  localidades  seleccionadas  por los clubes  u  organizaciones  de  migrantes para invertir en proyectos de Infraestructura Social Básica, Equipamiento o Servicios Comunitarios,   Educativos,   así   como Productivos, durante el ejercicio fiscal correspondiente, considerando el presupuesto disponible y de conformidad con las presentes Reglas. \\
-    \hline
-    \textbf{Empleo temporal} & Contribuir   a   dotar   de   esquemas   de seguridad social     que     protejan el bienestar socioeconómico de la población   en  situación  de   carencia   o pobreza,   mediante   la   mitigación   del impacto   económico   y   social   de   las personas de 16 años de edad o más que ven disminuidos sus ingresos o patrimonio  ocasionado  por situaciones económicas y sociales adversas, emergencias o desastres. & Mujeres y hombres de 16 años de edad en   adelante   que   ven   afectado   su patrimonio o enfrentan una disminución  temporal  en  su  ingreso por baja demanda de mano de obra o por los efectos de situaciones sociales y económicas adversas, emergencias o desastres. \\
-    \hline
-    \textbf{Seguro de vida para jefas de familia} & Contribuir   a   dotar   de   esquemas   de seguridad     social     que     protejan el bienestar socioeconómico de la población   en  situación  de   carencia   o pobreza,  mediante  la  incorporación  de jefas de familia en condición de pobreza, vulnerabilidad  por  carencias  sociales  o vulnerabilidad por ingresos a un seguro de vida. & Jefas  de  familia  que  se  encuentran  en situación  de  pobreza,  en  situación  de vulnerabilidad  por  carencias  sociales o  en  situación  de  vulnerabilidad  por ingresos. \\
-    \hline
-    \textbf{Fomento a la economía social (opciones productivas)} & Contribuir   a   mejorar el ingreso de personas en situación de pobrezamediante el fortalecimiento de capacidades y medios de los Organismos del Sector Social de la Economía que adopten cualquiera de las formas previstas en el catálogo de OSSE, así como personas con ingresos por debajo de la  línea de bienestar integradas en grupos     sociales,     que     cuenten     con iniciativas productivas. & Organismos   del   Sector   Social   de   la Economía  que  adopten  cualquiera  de las formas previstas en el catálogo de OSSE, así como personas con ingresos por debajo de la línea de bienestar integradas en grupos sociales, que cuenten con iniciativas productivas. \\
-    \hline
-\end{longtable}
-\captionof{table}{Programas y población objetivo}
-\label{tab:programas}
-
-\section{Información}
-Como se mencionó anteriormente, el SIFODE es la institución encargada de rocolectar e integrar los datos generado por el CUIS que sean de utilidad para la definición de pobreza multidimensional hecha por CONEVAL. Dicha información socioeconómica se clasifica en los siguientes apartados:
-\begin{itemize}
-    \item Domicilio de la vivienda que habita regularmente el hogar
-    \item Datos personales de los integrantes del hogar
-    \item Variables correspondientes a la evaluación del model multidimensional, de acuerdo a la estimación del ingreso y seis carencias sociales
-    \item Variables relacionadas a intervenciones de distintos programas sociales
-    \item Contiene 3.6 millones de hogares y 11.9 millones de personas y se conforma por la información captada de 2011 a 2014 para hogares PEA, y los más recientes levantamientos
-    \item Los logares PEA ascienden a 1.3 millones con 5.5 millones de personas
-\end{itemize}
-
-La entrevista del CUIS se realiza por hogar por lo que es importante que el encuestador identifique los distintos hogares que existen en una casa-habitación para la correcta detecctión de hogares en situación de carencias.\\
-
-\subsection{Condiciones}
-Condiciones por hogar:
-\begin{itemize}
-    \item \textbf{Todo hogar debe de tener un JEFE}. Respecto a dicho jefe se establece la relación de parentesco de los demás integrantes.
-    \item \textbf{No puede señalarse más de un JEFE DE HOGAR}.
-    \item \textbf{Se debe considerar a TODOS los integrantes que viven normalmente en el hogar}. Incluyendo a no parientes, infantes o todo aquel con el que se compartan gastos.
-    \item Se deben de incluir a las personas que usualmente viven en el hogar pero que por alguna situación se encuentran fuera; por vacaciones, trabajo o cuestiones de salud por ejemplo.
-    \item Incluir a todas las personas que vivan temporalmente en ese hogar que no tienen algún otro lado para ir.
-    \item  \textbf{Obligatoriamente se debe considerar al jefe del hogar}. Aún cuando por alguna situación se encuentre residiendo en algún otro domicilio.
-    \item \textbf{Personas a excluir}. Visitantes temporales, servientes o empleados cuando no comparten gastos.
+    \item Indexación compacta o bitmaps para proporcionar aceleración en consultas.
+    \item Soporte para distintos tipos de almacenamiento de texto como:
+        \begin{itemize}
+            \item RCFile
+            \item HBase
+            \item ORC
+            \item Parquet
+        \end{itemize}
+    \item Almacenamiento de metadatos en bases de datos relacionales, lo que permite reducir el tiempo para realizar verificaciones semánticas durante la ejecución de consultas.
+    \item Operaciones sobre datos comprimidos almacenados en ecosistema Hadoop con algoritmos como:
+        \begin{itemize}
+            \item DEFLATE
+            \item BWT
+            \item Snappy
+        \end{itemize}
+    \item UDF (Funciones definidas por el usario)
+    \item Consultas estilo SQL (HiveQL)
 \end{itemize}
