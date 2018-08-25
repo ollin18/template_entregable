@@ -17,9 +17,9 @@ Este archivo contiene las funciones de conexión a las bases de datos, tanto de 
 \subsection{distributions.R}
 Para poder hacer uso completo de las herramientas de análisis de grandes volúmenes datos se requiere que estas mismas hagan la generación de resultados lo más manejable posibles para una computadora de uso común, por lo cual la generación de estadísticos debe hacerse mediante sistemas distribuidos como es el caso de Athena, para que sea sólo la visualización y no el cálculo de los mismos el que deba ser llevado a cabo por el equipo doméstico. Así, mediante el archivo distributions se generan los estadísiticos necesarios para llevar a cabo análisis en distintos niveles de agregación, tales como entidades, programas o beneficios.
 \lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={distributions.R}]{dbrsocial/R/distributions.R}
-\subsection{plot_layout.R}
+\subsection{plot\_layout.R}
 Define simplemente un estilo unificado para las visualizaciones.
-\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={plot_layout.R}]{dbrsocial/R/plot_layout.R}
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={plot\_layout.R}]{dbrsocial/R/plot_layout.R}
 \subsection{retrieve.R}
 En esta sección se definen las consultas y los tipos de consultas así como la forma en la que realizamos modificaciones simultaneas de objetos, lo cual nos genera facilidad de análisis y reducción de costos en el procesamiento.
 \lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={retrieve.R}]{dbrsocial/R/retrieve.R}
