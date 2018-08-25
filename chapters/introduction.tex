@@ -37,3 +37,23 @@ Hive es una infraestructura indexada de agrupación, consulta y análisis de dat
     \item UDF (Funciones definidas por el usario)
     \item Consultas estilo SQL (HiveQL)
 \end{itemize}
+
+\subsection{PostgreSQL}
+La base de datos PostgreSQL toma su nombre al ser referenciada como algo \textit{post} \textbf{Ingres}, siendo esta última una base de datos en sí. El proyecto fue iniciado en la Universidad de Berkeley para realizar una base de datos relacional que fuera completamente libre y código abierto. Una de las virtudes de esta base de datos es su capacidad para trabajar con \textit{objetos}, logrando así una gran funcionalidad por tipos de archivos.\\
+Dentro de sus características principales, se encuentran:\\
+\begin{itemize}
+    \item Alta concurrencia. Lo que permite que se puedan hacen diversas consultas al mismo tiempo al igual que puede realizar tareas de lectura y escritura simultanea.
+    \item Distintos tipos nativos. Dentro de  los que destacan:
+        \begin{itemize}
+            \item Números flotantes de larga precisión
+            \item Cadenas de texto largas
+            \item Geometrías
+            \item Arreglos
+            \item Direcciones IP
+            \item Direcciones MAC
+        \end{itemize}
+\end{itemize}
+Postgres puede ser usado a través de distintos lenguajes de programación de manera nativa, además de contar con una gran variedad de extensiones que añaden funcionalidades tal es el caso de \textbf{PostGIS}, la cual agrega soporte a objetos geograficos lo que permite realizar análisis mediante consultas SQL o mediante conexiones a aplicaciones GIS.\cite{Postgres}
+
+\subsection{Athena}
+Athena es un servicio de consultas serverless que facilita el análisis de datos masivos almacenados dentro de la plataforma S3 mediante SQL estándar. Es importante destacar la naturaleza serverless de Athena pues los costos son generados solamente por las consultas mediante el tamaño de las mismas teniendo así la posibilidad de ahorrar costos de operación al no necesitar servidores permanentes además de no nocesitar mantenimiento. Este servicio escala automáticamente la tarea dependiendo de la complejidad y las necesidades de la misma haciendo la consulta en paralelo mediante el sistema Hive, por lo que hace que las consultas sean rápidas y económicas.\cite{Athena}
