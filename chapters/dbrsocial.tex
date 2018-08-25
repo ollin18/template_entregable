@@ -1,1 +1,37 @@
-\chapter{Fuentes de datos}
+\chapter{dbrsocial}
+\textbf{dbrsocial} es un paquete para el lenguaje de programación \textit{R}, creado específicamente con la idea de facilitar  el análisis del sistema de datos para el proyecto en general. Tiene  capacidades analíticas, muestrales, geográficas y gráficas. A continuación se hace una presentación del mismo.
+\section{README}
+En esta sección se detalla la forma de instalación y los requerimientos de uso.
+\lstinputlisting[language=bash,basicstyle=\ttfamily\scriptsize,caption={README}]{dbrsocial/README.md}
+\section{CONTRIBUTING}
+Al ser un paquete que pretende ser mantenido por distintas personas, es necesario poner lineamientos de la manera en la que se debe de desarrollar el código para el mismo, para esto sirve el archivo CONTRIBUTING con el cual se quiere marcar el estilo y la forma de contribuir.
+\lstinputlisting[language=bash,basicstyle=\ttfamily\scriptsize,caption={CONTRIBUTING}]{dbrsocial/CONTRIBUTING.md}
+\section{DESCRIPTION}
+El archivo DESCRIPTION es el que genera la instalación del paquete dentro del ecosistema de R. En este se incluyen las dependencias así como los contactos de las personas encargadas del desarrollo, además de un versionador del paquete.
+\lstinputlisting[language=bash,basicstyle=\ttfamily\scriptsize,caption={DESCRIPTION}]{dbrsocial/DESCRIPTION}
+\section{R}
+En la carpeta que debe llevar este nombre es donde se definen las funciones del paquete.
+\subsection{connect.R}
+Este archivo contiene las funciones de conexión a las bases de datos, tanto de Postgres como de Athena, es importante mencionar que las variables de ambiente definidas en el README deben de estar adecuadamente exportadas o dentro de un archivo de nombre ``.env''.
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={connect.R}]{dbrsocial/R/connect.R}
+\subsection{distributions.R}
+Para poder hacer uso completo de las herramientas de análisis de grandes volúmenes datos se requiere que estas mismas hagan la generación de resultados lo más manejable posibles para una computadora de uso común, por lo cual la generación de estadísticos debe hacerse mediante sistemas distribuidos como es el caso de Athena, para que sea sólo la visualización y no el cálculo de los mismos el que deba ser llevado a cabo por el equipo doméstico. Así, mediante el archivo distributions se generan los estadísiticos necesarios para llevar a cabo análisis en distintos niveles de agregación, tales como entidades, programas o beneficios.
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={distributions.R}]{dbrsocial/R/distributions.R}
+\subsection{plot_layout.R}
+Define simplemente un estilo unificado para las visualizaciones.
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={plot_layout.R}]{dbrsocial/R/plot_layout.R}
+\subsection{retrieve.R}
+En esta sección se definen las consultas y los tipos de consultas así como la forma en la que realizamos modificaciones simultaneas de objetos, lo cual nos genera facilidad de análisis y reducción de costos en el procesamiento.
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={retrieve.R}]{dbrsocial/R/retrieve.R}
+\section{examples}
+En esta sección se escribe código de ejemplo que facilite a un usuario nuevo el uso de este paquete.
+\subsection{example.R}
+Se muestran algunos ejemplos de uso de las funciones desarrolladas.
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={example.R}]{dbrsocial/examples/example.R}
+\section{man}
+Esta es una carpeta autogenerada por el paquete \textit{Roxygen} el cual es la base de la documentación del paquete. Todas las funciones anteriormente descritas tienen un comentario de varias lineas el cual es llamado \textit{docstring} que sirve para hacer una pequeña documentación y explicar el uso de dicha función. De esta manera \textit{Roxygen} genera archivos de ayuda para ser accedidos de la manera tradicional en R.
+\section{tests}
+Cada vez que se escribe o modifica una función, esta debe ser probada y autorizada sólamente si pasa ciertas pruebas. Dichas pruebas son hechas a partir de ciertos programas o paquetes llamados de \textit{unit testing}, los cuales facilitan la integración de nuevas funciones. De esta manera, tenemos que escribir ejemplos para todas las funciones que nos arrojen resultados que  son esperados para contrastarlos con los  obtenidos. Si estos difieren entonces la prueba no pasa y se genera un error. Para este paquete usamos el paquete \textit{testthat} que está completamente integrado con las demás dependencias del mismo como \textit{Roxygen}.
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={testthat.R}]{dbrsocial/tests/testthat.R}
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={test\_conection.R}]{dbrsocial/tests/testthat/test_conection.R}
+\lstinputlisting[language=R,basicstyle=\ttfamily\scriptsize,caption={test\_retrive.R}]{dbrsocial/tests/testthat/test_retrive.R}
